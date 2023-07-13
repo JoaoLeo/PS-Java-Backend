@@ -1,4 +1,4 @@
-package com.curso.services.exceptions;
+package br.com.banco.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(Object id) {
