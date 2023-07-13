@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS conta;
+DROP TABLE IF EXISTS transferencia;
 CREATE TABLE conta
 (
     id_conta IDENTITY NOT NULL PRIMARY KEY,
