@@ -2,13 +2,9 @@ package br.com.banco.services;
 
 import br.com.banco.models.Transferencia;
 import br.com.banco.repositories.TransferenciaRepository;
-import br.com.banco.services.exceptions.DatabaseException;
 import br.com.banco.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
