@@ -24,5 +24,8 @@ public class TransferenciaService {
         Optional<Transferencia> obj = repo.findById(id);
         return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
+    public List<Transferencia> getTransferenciasByContaId(Long id){
+        return repo.getTransferenciasByContaId(id);
+    }
 
 }

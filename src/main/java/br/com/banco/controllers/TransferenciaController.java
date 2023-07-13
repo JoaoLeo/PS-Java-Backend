@@ -27,6 +27,11 @@ public class TransferenciaController {
         Transferencia obj = service.findById(id);
         return ResponseEntity.ok().body(obj);
     }
+    @GetMapping(value = "/buscarporconta/{idConta}")
+    public ResponseEntity<List<Transferencia>> getTransferenciasByContaId(@PathVariable Long idConta) {
+        List<Transferencia> obj = service.getTransferenciasByContaId(idConta);
+        return ResponseEntity.ok().body(obj);
+    }
 
 
 }
