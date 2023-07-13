@@ -1,11 +1,8 @@
 package br.com.banco.models;
 
-import br.com.banco.models.enums.TipoEnum;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "transferencia")
@@ -22,7 +19,7 @@ public class Transferencia {
     private BigDecimal valor;
 
     @Column(name = "tipo", nullable = false)
-    private TipoEnum tipo;
+    private String tipo;
 
     @Column(name = "nome_operador_transacao")
     private String nome_operador_transacao;
@@ -34,7 +31,7 @@ public class Transferencia {
     public Transferencia() {
     }
 
-    public Transferencia(Long id, LocalDateTime dataTransferencia, BigDecimal valor, TipoEnum tipo, String nome_operador_transacao, Conta conta_id) {
+    public Transferencia(Long id, LocalDateTime dataTransferencia, BigDecimal valor, String tipo, String nome_operador_transacao, Conta conta_id) {
         this.id = id;
         this.dataTransferencia = dataTransferencia;
         this.valor = valor;
@@ -67,11 +64,11 @@ public class Transferencia {
         this.valor = valor;
     }
 
-    public TipoEnum getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(TipoEnum tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
