@@ -5,6 +5,8 @@ import br.com.banco.repositories.TransferenciaRepository;
 import br.com.banco.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,4 +26,16 @@ public class TransferenciaService {
         return repo.getTransferenciasByContaId(id);
     }
 
+
+    public List<Transferencia> getTransferenciasByNomeOperadorTransacao(String nomeOperadorTransacao) {
+        return repo.findAllByNomeOperadorTransacao(nomeOperadorTransacao);
+    }
+
+    public List<Transferencia> getTransferenciasByPeriodo(LocalDateTime startDate, LocalDateTime endDate) {
+        return repo.findAllByDataTransferenciaBetween(startDate, endDate);
+    }
+
+    public List<Transferencia> getTransferenciasByNomeAndPeriodo(String nome, LocalDateTime startDate, LocalDateTime endDate) {
+        return repo.findAllByNomeAndDataTransferenciaBetween(nome, startDate, endDate);
+    }
 }
